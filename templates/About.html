@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina&family=PT+Serif&display=swap" rel="stylesheet">
+    <title>About_us</title>
+    <style>
+     body{
+	//background-image: linear-gradient(to top right, #8860D0, #5680E9, #5AB9EA , #84CEEB, #C1C8E4);
+	background-color: #C1C8E4;
+	background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+	min-height:100vh;
+	font-family:'PT Serif', serif;
+}
+        .box{
+	position:absolute;
+	width: 50%;
+	height: 70%;
+	left:50%;
+	top:50%;
+	margin-top:30px;
+	transform: translate(-50%,-50%);
+    background-color: rgb(255, 255, 255);
+	border-radius:15px;
+	padding:20px 20px;
+	box-shadow:0 0 40px -10px #000;
+}
+
+.header
+{
+ padding: 5px;
+}
+a.lnk
+{
+float: right;
+margin-left:5px;
+margin-right:5px;
+margin-top:5px;
+font-size:20px;
+color: #000;
+
+}
+a.lnk:hover
+{
+  background-color: #68838B;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <form class="form" action = "{{ url_for('About') }}" method = "POST">
+        <img src="{{ url_for('static',filename='Capture.PNG')}}"alt="O" width="50px" height="50px">
+        <font style="font-family: 'Karantina', cursive; font-size:45px;">Grammar Checker</font>
+        <a href= "/Login" onclick ="#" class="lnk">LOGOUT</a>
+        <a href="/Contact" onclick="#" class="lnk">CONTACT_US</a>
+        <a href="/About" onclick="#" class="lnk">ABOUT_US</a>
+        <a href="/checker" onclick="#" class="lnk">HOME</a>
+        </form>
+    </div>
+
+<div class="box">
+    <form>
+    <h3><b>Introduction</b></h3>
+        <p>Many of us, native or non-native speakers of English, often have problems with grammar, spelling, sentence structure and references when it
+            comes to academic purposes. Like most people, you probably learned the basic rules of grammar in school. And like many people, you’ve probably
+            forgotten much of what you learned.</p>
+        <p>Our online spelling and grammar checker will answer those questions and (hopefully) help you gain more confidence in your writing.</p>
+        <p>The grammar checking application helps to check your English text for grammar and punctuation errors.</p>
+    <h3><b>Advantages of using grammar checker</b></h3>
+        <p>
+            <ol>
+            <li>Build Confidence in your writing</li>
+            <li>Learn How to Spell New Words</li>
+            <li>Gain Authority</li>
+            <li>Save Time</li>
+            <li>Correct Mistakes</li>
+            </ol>
+        </p>
+
+    </form>
+</div>
+</body>
+</html>

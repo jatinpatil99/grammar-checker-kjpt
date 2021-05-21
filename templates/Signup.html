@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina&family=PT+Serif&display=swap" rel="stylesheet">
+    <title>Sign_up</title>
+    <style>
+        body{
+        background-color: #C1C8E4;
+        }
+        .form{
+        width:340px;
+        height:440px;
+        background:#fff;
+        border-radius:15px;
+        box-shadow:0 0 40px -10px #000;
+        margin-top:30px;
+        margin:calc(50vh - 250px) auto;
+        padding:20px 30px;
+        max-width:calc(100vw - 40px);
+        box-sizing:border-box;
+        font-family:'PT Serif', serif;
+        position:relative
+        }
+        h2{margin:10px 0;
+        padding-bottom:10px;
+        width:180px;
+        color:#000;
+        border-bottom:3px solid #78788c;
+        }
+        input{
+        width:100%;
+        padding:10px;
+        box-sizing:border-box;
+        background:none;
+        outline:none;
+        resize:none;
+        border:0;
+        font-family:'Montserrat',sans-serif;
+        transition:all .3s;
+        border-bottom:2px solid #bebed2
+        }
+        input:focus{
+        border-bottom:2px solid #78788c
+        }
+        p:before{
+        content:attr(type);
+        display:block;
+        margin:28px 0 0;
+        font-size:14px;color:#5a5a5a
+        }
+        button{
+        float:center;
+        padding:8px 12px;
+        margin-top: 30px;
+        margin-left:40%;
+		margin-right: 40%;
+        font-family:'Montserrat',sans-serif;
+        border:2px solid #78788c;
+        background:0;color:#5a5a6e;
+        cursor:pointer;transition:all .3s
+        }
+        button:hover{
+        background:#78788c;color:#fff
+        }
+        span{
+        background-color: #68838B;
+        margin:0 5px 0 15px
+        }
+        .header
+        {
+        padding: 5px;
+        }
+        p
+        {
+            margin: 1px;
+        }
+		
+    </style>
+</head>
+<body>
+    <div class="header">
+        
+        <img src="{{ url_for('static',filename='Capture.PNG')}}"alt="O" width="50px" height="50px">
+		<font style="font-family: 'Karantina', cursive; font-size:45px;">Grammar Checker</font>
+      </div>
+<form class="form" action = "{{ url_for('Signup') }}" method = "POST">
+  <h2>SIGN UP</h2>
+  <p>Email</p>
+      <input  type="email" placeholder="Type your email" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></input>
+  <p>Username</p>
+      <input placeholder="Type your username" name="username" ></input>
+  <p>Password</p>
+      <input type="password" placeholder="Type your password.." name="password" id="typepass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></input>   
+  
+  
+    <a href="/Login"><button type = "submit" value = "submit">Submit</button></a>
+   
+  
+</form>
+<div >
+
+{%if msg%}
+{{msg}}
+{%endif%}
+</div>
+</body>
+</html>
